@@ -1,6 +1,6 @@
 package it.fpagano.test;
 
-public class Main {
+public class MatrixExerciseImperative {
 
     public static void main(String[] args) {
 
