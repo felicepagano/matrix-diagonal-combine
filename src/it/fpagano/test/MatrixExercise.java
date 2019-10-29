@@ -13,6 +13,11 @@ public class MatrixExercise {
 
     public static void main(String[] args) {
 
+        /*
+        {"1", "A", "5", "7", "B", "N"},
+        {"2", "B", "6", "8", "K", "R"},
+        {"5", "Q", "N", "3", "B", "1"}
+         */
         List<String> matrix = List.of("1A", "2B");
 
         Collection<String> values = IntStream.range(0, matrix.size()).boxed()

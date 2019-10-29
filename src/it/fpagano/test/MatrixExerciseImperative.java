@@ -7,9 +7,8 @@ public class MatrixExerciseImperative {
         int n = 6;
         int m = 3;
         String [][] matrix = {
-            {"1", "A", "5", "7", "B", "N"},
-            {"2", "B", "6", "8", "K", "R"},
-            {"5", "Q", "N", "3", "B", "1"}
+            {"1", "A"},
+            {"2", "B"}
         };
 
         String [][] result = new String[m][n+m];
@@ -21,11 +20,11 @@ public class MatrixExerciseImperative {
 
         for(int j = 0; j < n+m; j++) {
             for(int i = 0; i < m; i++) {
-                if(result[i][j] != null) {
+                if(result[i][j] != null && !result[i][j].isBlank()) {
                     System.out.print(result[i][j]);
                 }
             }
-            System.out.println();
+            System.out.println("");
         }
     }
 
