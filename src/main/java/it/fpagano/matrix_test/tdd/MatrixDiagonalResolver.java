@@ -20,10 +20,18 @@ public class MatrixDiagonalResolver<T> {
                          { "2", "B", "6", "8", "K", "R" },
                          { "5", "Q", "N", "3", "B", "1" } };
 
-        // String[][] s = { {"A","1"}, {"B","2"}};
+        Integer[][] is = { { 1, 2, 3, 4, 5 },
+                           { 1, 2, 3, 4, 5 },
+                           { 1, 2, 3, 4, 5 } };
 
         MatrixDiagonalResolver<String> exercise = new MatrixDiagonalResolver<>(s, String::concat);
         exercise.findAllDiagonal("");
+
+        MatrixDiagonalResolver<Integer> exerciseIntegerSum = new MatrixDiagonalResolver<>(is, Integer::sum);
+        exerciseIntegerSum.findAllDiagonal(0);
+
+        MatrixDiagonalResolver<Integer> exerciseIntegerMultiplier = new MatrixDiagonalResolver<>(is, (a, b) -> a * b);
+        exerciseIntegerMultiplier.findAllDiagonal(1);
     }
 
 /*
@@ -50,8 +58,8 @@ public class MatrixDiagonalResolver<T> {
             results.add(findDiagonal(0, j, unit));
         }
 
-        for(int i = 1; i < matrix.length; i++) {
-            results.add(findDiagonal(i, j-1, unit));
+        for (int i = 1; i < matrix.length; i++) {
+            results.add(findDiagonal(i, j - 1, unit));
         }
 
         System.out.println(results);
