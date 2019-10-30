@@ -1,7 +1,6 @@
 package it.fpagano.matrix_test.tdd;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -10,7 +9,13 @@ import java.util.stream.Stream;
 
 class MatrixDiagonalResolverTest {
 
-  private MatrixDiagonalResolver<String> m;
+  private String[][] s = {
+          {"1", "A", "5", "7", "B", "N"},
+          {"2", "B", "6", "8", "K", "R"},
+          {"5", "Q", "N", "3", "B", "1"}
+  };
+
+  private MatrixDiagonalResolver<String> m = new MatrixDiagonalResolver<>(s, String::concat, "");
 
   private static Stream<Arguments> cases() {
     return Stream.of(
@@ -59,20 +64,10 @@ class MatrixDiagonalResolverTest {
       Assertions.assertEquals("RB", result);
   }*/
 
-  @BeforeEach
-  public void init() {
-    String[][] s = {
-      {"1", "A", "5", "7", "B", "N"},
-      {"2", "B", "6", "8", "K", "R"},
-      {"5", "Q", "N", "3", "B", "1"}
-    };
-    m = new MatrixDiagonalResolver<>(s, String::concat);
-  }
-
   @ParameterizedTest
   @MethodSource("cases")
   public void paramTest(int i, int j, String expectedResult) {
-    String result = m.findDiagonal(i, j, "");
+    String result = m.findDiagonal(i, j);
     Assertions.assertEquals(expectedResult, result);
   }
 }

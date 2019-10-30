@@ -35,7 +35,7 @@ public class MatrixExercise {
     String[] split = s.split("", -1);
     return IntStream.range(0, split.length)
         .boxed()
-        .map(i -> IndexStringZipEntry.of(i, split[i]))
+        .map(i -> IndexStringZipEntryCompanion.of(i, split[i]))
         .filter(IndexStringZipEntry::isPresent);
   }
 
