@@ -1,4 +1,4 @@
-package it.fpagano.test;
+package it.fpagano.matrix_test;
 
 public class Pair<K, V> {
 

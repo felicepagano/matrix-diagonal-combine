@@ -1,4 +1,4 @@
-package it.fpagano.test;
+package it.fpagano.matrix_test;
 
 public class IndexStringZipEntry extends Pair<Integer, String> {
 

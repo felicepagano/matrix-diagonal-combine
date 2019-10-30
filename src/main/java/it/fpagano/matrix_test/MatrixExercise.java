@@ -1,4 +1,4 @@
-package it.fpagano.test;
+package it.fpagano.matrix_test;
 
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.joining;
