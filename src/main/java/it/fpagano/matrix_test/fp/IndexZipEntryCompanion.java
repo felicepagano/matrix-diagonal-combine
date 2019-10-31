@@ -1,15 +1,15 @@
-package it.fpagano.matrix_test;
+package it.fpagano.matrix_test.fp;
 
 import java.util.function.Predicate;
 
-public class IndexZipEntryCompanion {
+class IndexZipEntryCompanion {
 
     private static final IndexZipEntry<?> EMPTY = new IndexZipEntry.EmptyIndexEntry<>();
 
     private IndexZipEntryCompanion() {
     }
 
-    public static <T> IndexZipEntry<T> of(Integer key, T value, Predicate<T> isBlank) {
+    static <T> IndexZipEntry<T> of(Integer key, T value, Predicate<T> isBlank) {
         if(isBlank.test(value)) {
             return empty();
         } else {

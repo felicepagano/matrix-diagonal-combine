@@ -10,7 +10,7 @@ public class MatrixDiagonalResolver<T> {
   private final BinaryOperator<T> combine;
   private final T unit;
 
-  public MatrixDiagonalResolver(T[][] matrix, BinaryOperator<T> combine, T unit) {
+  MatrixDiagonalResolver(T[][] matrix, BinaryOperator<T> combine, T unit) {
     this.matrix = matrix;
     this.combine = combine;
     this.unit = unit;
@@ -59,7 +59,7 @@ public class MatrixDiagonalResolver<T> {
       }
   */
 
-  public void findAllDiagonal() {
+  private void findAllDiagonal() {
     List<T> results = new ArrayList<>();
     int j = 0;
     for (; j < matrix[0].length; j++) {
@@ -73,7 +73,7 @@ public class MatrixDiagonalResolver<T> {
     System.out.println(results);
   }
 
-  public T findDiagonal(int i, int j) {
+  T findDiagonal(int i, int j) {
       return findDiagonalRecursive(i, j, this.unit);
   }
 

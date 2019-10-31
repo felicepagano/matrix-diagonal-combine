@@ -1,12 +1,12 @@
-package it.fpagano.matrix_test;
+package it.fpagano.matrix_test.fp;
 
 public class IndexZipEntry<T> extends Pair<Integer, T> {
 
-    public IndexZipEntry() {
+    IndexZipEntry() {
         super();
     }
 
-    public IndexZipEntry(Integer key, T value) {
+    IndexZipEntry(Integer key, T value) {
         super(key, value);
     }
 

@@ -1,4 +1,4 @@
-package it.fpagano.matrix_test;
+package it.fpagano.matrix_test.imperative;
 
 public class MatrixExerciseImperative {
 
