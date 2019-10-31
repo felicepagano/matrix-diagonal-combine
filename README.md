@@ -16,6 +16,8 @@ For example, input
 
 Output has to be: `1 A2 5B5 76Q B8N NK3 RB 1` as a result (with or
 without spaces, doesn’t matter)
+
+_This matrix show why shift could be a solution for the problem_
  
 |   0   |   1   |   2   |
 |-------|-------|-------|
