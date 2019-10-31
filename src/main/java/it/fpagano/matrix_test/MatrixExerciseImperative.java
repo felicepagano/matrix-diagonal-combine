@@ -4,12 +4,13 @@ public class MatrixExerciseImperative {
 
   public static void main(String[] args) {
 
-    int n = 6;
-    int m = 3;
     String[][] matrix = {
       {"1", "A"},
       {"2", "B"}
     };
+
+    int m = matrix.length;
+    int n = matrix[m-1].length;
 
     String[][] result = new String[m][n + m];
 

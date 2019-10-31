@@ -22,44 +22,44 @@ public class MatrixExercise {
         {"2", "B", "6", "8", "K", "R"},
         {"5", "Q", "N", "3", "B", "1"}
          */
-        List<List<String>> matrix = List.of(
+        List<List<String>> stringMatrix = List.of(
                 List.of("1", "A"),
                 List.of("2", "B")
         );
 
-        List<List<Integer>> matrix2 = List.of(
+        List<List<Integer>> integerMatrixForSum = List.of(
                 List.of(1, 2),
                 List.of(3, 4)
         );
 
-        List<List<Integer>> matrix3 = List.of(
+        List<List<Integer>> integerMatrixForMultiply = List.of(
                 List.of(1, 2),
                 List.of(3, 4)
         );
 
-        Collection<String> stringResult = pippo(matrix, " ", joining());
-        Collection<Integer> intResultSum = pippo(matrix2, 0, Collectors.summingInt(i -> i));
-        Collection<Integer> intResultTimes = pippo(matrix3, 1, Collectors.reducing(1, (o, o2) -> o * o2));
+        Collection<String> stringResult = resolveMatrix(stringMatrix, " ", joining());
+        Collection<Integer> intResultSum = resolveMatrix(integerMatrixForSum, 0, Collectors.summingInt(i -> i));
+        Collection<Integer> intResultMultiply = resolveMatrix(integerMatrixForMultiply, 1, Collectors.reducing(1, (o, o2) -> o * o2));
 
         System.out.println(stringResult);
         System.out.println(intResultSum);
-        System.out.println(intResultTimes);
+        System.out.println(intResultMultiply);
 
     }
 
-    private static<T> Collection<T> pippo(List<List<T>> matrix, T padvalue, Collector<? super T, ?, T> collector) {
+    private static<T> Collection<T> resolveMatrix(List<List<T>> matrix, T padvalue, Collector<? super T, ?, T> collector) {
         return IntStream.range(0, matrix.size())
                 .boxed()
                 .map(index -> shiftRight(index, matrix.get(index), padvalue))
                 .flatMap(MatrixExercise::zipWithIndex)
-                .collect(groupingBy(IndexStringZipEntry::getKey, mapping(IndexStringZipEntry::getValue, collector)))
+                .collect(groupingBy(IndexZipEntry::getKey, mapping(IndexZipEntry::getValue, collector)))
                 .values();
     }
 
-    private static <T> Stream<IndexStringZipEntry<T>> zipWithIndex(List<T> s) {
+    private static <T> Stream<IndexZipEntry<T>> zipWithIndex(List<T> s) {
         return IntStream.range(0, s.size()).boxed()
-                .map(i -> IndexStringZipEntry.of(i, s.get(i), Predicate.isEqual(0)))
-                .filter(IndexStringZipEntry::isPresent);
+                .map(i -> IndexZipEntryCompanion.of(i, s.get(i), Predicate.isEqual(0)))
+                .filter(IndexZipEntry::isPresent);
 
     }
 
