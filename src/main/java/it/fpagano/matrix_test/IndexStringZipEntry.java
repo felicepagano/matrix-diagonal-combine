@@ -1,6 +1,8 @@
 package it.fpagano.matrix_test;
 
-public class IndexStringZipEntry extends Pair<Integer, String> {
+import java.util.function.Predicate;
+
+public class IndexStringZipEntry<T> extends Pair<Integer, T> {
 
     private static final IndexStringZipEntry EMPTY = new EmptyIndexStringEntry();
 
@@ -8,15 +10,15 @@ public class IndexStringZipEntry extends Pair<Integer, String> {
         super();
     }
 
-    public IndexStringZipEntry(Integer key, String value) {
+    public IndexStringZipEntry(Integer key, T value) {
         super(key, value);
     }
 
-    public static IndexStringZipEntry of(Integer key, String value) {
-        if(value.isBlank()) {
+    public static <T> IndexStringZipEntry<T> of(Integer key, T value, Predicate<T> isBlank) {
+        if(isBlank.test(value)) {
             return empty();
         } else {
-            return new IndexStringZipEntry(key, value);
+            return new IndexStringZipEntry<T>(key, value);
         }
     }
 
