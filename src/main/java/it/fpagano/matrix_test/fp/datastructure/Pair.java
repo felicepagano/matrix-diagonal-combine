@@ -1,4 +1,4 @@
-package it.fpagano.matrix_test.fp;
+package it.fpagano.matrix_test.fp.datastructure;
 
 class Pair<K, V> {
 
@@ -16,11 +16,11 @@ class Pair<K, V> {
     return new Pair<>(key, value);
   }
 
-  K getKey() {
+  public K getKey() {
     return key;
   }
 
-  V getValue() {
+  public V getValue() {
     return value;
   }
 }

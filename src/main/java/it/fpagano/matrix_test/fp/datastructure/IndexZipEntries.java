@@ -1,16 +1,14 @@
-package it.fpagano.matrix_test.fp;
+package it.fpagano.matrix_test.fp.datastructure;
 
-import java.util.function.Predicate;
-
-class IndexZipEntryCompanion {
+public class IndexZipEntries {
 
     private static final IndexZipEntry<?> EMPTY = new IndexZipEntry.EmptyIndexEntry<>();
 
-    private IndexZipEntryCompanion() {
+    private IndexZipEntries() {
     }
 
-    static <T> IndexZipEntry<T> of(Integer key, T value, Predicate<T> isBlank) {
-        if(isBlank.test(value)) {
+    public static <T> IndexZipEntry<T> of(Integer key, T value) {
+        if(value == null) {
             return empty();
         } else {
             return new IndexZipEntry<>(key, value);
