@@ -10,7 +10,6 @@ class MatrixExercise<T>(private val unit: T, private val operation: (acc: T, T) 
             .groupBy({ it.index }, { it.value.get() })
             .values.map { it.fold(unit, operation) }
 
-
     private tailrec fun <T> shiftRight(n: Int, list: List<Optional<T>>): List<Optional<T>> = when (n) {
         0 -> list
         else -> shiftRight(n - 1, Optional.empty<T>() + list)
