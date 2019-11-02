@@ -14,7 +14,7 @@ class MatrixExercise[T](private val unit: T, private val reduce: (T, T) => T) {
     fillMatrixRecursive(x, value.map(Option(_)))
   }
 
-  def resolveMatrix(matrix: List[List[T]]): Iterable[T] = {
+  def resolve(matrix: List[List[T]]): Iterable[T] = {
     val shiftedRows = for (
       row <- 0 until matrix.size;
       shiftedRow <- fillMatrix(row, matrix(row)).zipWithIndex

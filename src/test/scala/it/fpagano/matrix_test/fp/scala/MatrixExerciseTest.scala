@@ -1,6 +1,7 @@
 package it.fpagano.matrix_test.fp.scala
 
-import org.scalatest.FunSuite
+import org.scalatest._
+import Matchers._
 
 class MatrixExerciseTest extends FunSuite {
 
@@ -11,11 +12,17 @@ class MatrixExerciseTest extends FunSuite {
       List("5", "Q", "N", "3", "B", "1")
     )
 
+    val expectedResult = List("1", "NK3", "A2", "RB", "5B5", "1", "76Q", "B8N")
+
     val resolver = new MatrixExercise[String]("", _+_)
-    val result = resolver.resolveMatrix(matrix)
+    val result = resolver.resolve(matrix)
+
+    result.toList should equal(expectedResult)
   }
 
-  test("test int ") {
+  test("test ints sum") {
+    val expectedResult = List(1, 6, 15, 14, 9)
+
     val matrix = List(
       List(1, 2, 3),
       List(4, 5, 6),
@@ -23,8 +30,9 @@ class MatrixExerciseTest extends FunSuite {
     )
 
     val resolver = new MatrixExercise[Int](0, _+_)
-    val result = resolver.resolveMatrix(matrix)
-    println(result)
+    val result = resolver.resolve(matrix)
+
+    result.toList should equal(Iterable(1, 6, 15, 14, 9))
   }
 
 }
