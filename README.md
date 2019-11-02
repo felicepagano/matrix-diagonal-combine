@@ -26,7 +26,7 @@ _This matrix show why shift could be a solution for the problem_
 |       | (1,5) | (2,4) |
 |       |       | (2,5) |
 
-In this try I'm trying to solve the problem using different techniques and languages:
+In this exercise I'm trying to solve the problem using different techniques and languages:
 
 - imperative style
 - fp style
