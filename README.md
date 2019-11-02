@@ -25,3 +25,13 @@ _This matrix show why shift could be a solution for the problem_
 | (0,5) | (1,4) | (2,3) |
 |       | (1,5) | (2,4) |
 |       |       | (2,5) |
+
+In this try I'm trying to solve the problem using different techniques and languages:
+
+- imperative style
+- fp style
+- TDD
+- java
+- kotlin
+- scala
+- WIP: scala with cats
