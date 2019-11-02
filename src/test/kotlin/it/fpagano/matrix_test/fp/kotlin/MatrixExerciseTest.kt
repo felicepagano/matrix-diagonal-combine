@@ -19,6 +19,7 @@ internal class MatrixExerciseTest {
         val result = matrixStringResolver.find(matrix)
 
         Assertions.assertEquals(expectedResult, result)
+        //assertThat<Collection<String>>(result, contains<Any>(*expectedResult.toTypedArray()))
 
     }
 
