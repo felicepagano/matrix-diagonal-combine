@@ -14,7 +14,7 @@ class MatrixExerciseTest extends FunSuite {
 
     val expectedResult = List("1", "NK3", "A2", "RB", "5B5", "1", "76Q", "B8N")
 
-    val resolver = new MatrixExercise[String]("", _+_)
+    val resolver = new MatrixExercise[String]("", String.+)
     val result = resolver.resolve(matrix)
 
     result.toList should equal(expectedResult)
